@@ -1,0 +1,41 @@
+<div class="container">
+  <form class="form-group" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Add Product</h2>
+    <mat-form-field>
+      <mat-label>Product Name</mat-label>
+      <input matInput placeholder="Enter Product Name" formControlName="name" />
+      <mat-error *ngIf="f.name.errors && f.name.errors.name">
+        Product Name cannot be empty
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Stock</mat-label>
+      <input matInput placeholder="Enter Stock" formControlName="stock" />
+      <mat-error *ngIf="f.stock.errors && f.stock.errors.stock">
+        Stock cannot be empty
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Price</mat-label>
+      <input matInput placeholder="Enter Price" formControlName="price" />
+      <mat-error *ngIf="f.price.errors && f.price.errors.price">
+        Price cannot be empty
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Photo</mat-label>
+      <input matInput placeholder="Enter Photo" formControlName="photo" />
+      <mat-error *ngIf="f.photo.errors && f.photo.errors.photo">
+        Photo cannot be empty
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-fab extended color="primary" class="btn-submit">Submit</button>
+    <button mat-fab extended color="warn" [routerLink]="['/product']">
+      Cancel
+    </button>
+  </form>
+</div>

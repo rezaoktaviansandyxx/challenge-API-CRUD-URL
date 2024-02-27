@@ -1,0 +1,34 @@
+<div class="container">
+  <form class="form-group" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <h2>Edit Product</h2>
+    <mat-form-field>
+      <mat-label for="id">Product Id</mat-label>
+      <input matInput value="{{ product.id }}" disabled />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label for="name">Product Name</mat-label>
+      <input matInput placeholder="Enter Product Name" formControlName="name" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Stock</mat-label>
+      <input matInput placeholder="Enter Stock" formControlName="stock" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Price</mat-label>
+      <input matInput placeholder="Enter Price" formControlName="price" />
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Photo</mat-label>
+      <input matInput placeholder="Enter Photo" formControlName="photo" />
+    </mat-form-field>
+
+    <button mat-fab extended color="primary" class="btn-submit">Update</button>
+    <button mat-fab extended color="warn" [routerLink]="['/product']">
+      Cancel
+    </button>
+  </form>
+</div>
