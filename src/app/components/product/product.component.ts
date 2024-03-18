@@ -18,6 +18,7 @@ export class ProductComponent implements OnInit {
     'photo',
     'actions',
   ];
+
   constructor(private service: ProductService, private router: Router) {}
 
   getProducts(): void {
